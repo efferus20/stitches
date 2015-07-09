@@ -46,13 +46,14 @@ function ($, util, templates, BaseStylesheet) {
          * @param {boolean} uri Switch including image as data URI
          * @return string
          */
-        get: function (sprites, spritesheet, prefix, uri) {
+        get: function (sprites, spritesheet, prefix, uri, dimensions) {
             var backgroundImage = uri ? spritesheet : this.settings.filename;
 
             return templates.css({
                 prefix: prefix,
                 backgroundImage: backgroundImage,
-                sprites: sprites
+                sprites: sprites,
+                dimensions: dimensions
             });
         }
     });

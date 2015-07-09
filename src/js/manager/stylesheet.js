@@ -54,8 +54,10 @@ function ($, CssStylesheet, LessStylesheet) {
             var spritesheet = options.spritesheet;
             var prefix = options.prefix;
             var uri = options.uri;
+            var dimensions = options.dimensions || {width: 400, height: 400};
+            console.log('DIMENSIONS!!!', dimensions, 100*dimensions.width/(sprites || [{width: 30, height: 30}])[0].image.width)
 
-            var styles = this.manager.get(sprites, spritesheet, prefix, uri);
+            var styles = this.manager.get(sprites, spritesheet, prefix, uri, dimensions);
             styles = styles.replace(/\\n/g, "\n");
 
             return styles;

@@ -16,7 +16,11 @@
         <p><textarea rows="<%= markupLines %>"><%= markup %></textarea></p>
     </div>
     <div class="tab-pane stitches-example" id="example">
-        <style type="text/<%= stylesheetType %>"><%= stylesheetWithUri %></style>
+        <style type="text/<%= stylesheetType %>"><%= stylesheetWithUri %>
+            .<%= prefix %> {
+                width: 10%;
+            }
+        </style>
         <div><%= markupTooltip %></div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>
     </div>
